@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class Screen4 extends StatelessWidget {
   final String name;
-  const Screen4({Key? key, required this.name}) : super(key: key);
+  const Screen4({super.key, required this.name});
 
   @override
   Widget build(BuildContext context) {

@@ -3,7 +3,7 @@ import 'screen3.dart'; // Import Screen3
 
 class Screen2 extends StatelessWidget {
   final String name;
-  const Screen2({Key? key, required this.name}) : super(key: key);
+  const Screen2({super.key, required this.name});
 
   @override
   Widget build(BuildContext context) {

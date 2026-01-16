@@ -11,7 +11,7 @@ class Screen0 extends StatefulWidget {
 }
 
 class _Screen0State extends State<Screen0> {
-  TextEditingController _nameController = TextEditingController();
+  final TextEditingController _nameController = TextEditingController();
 
   // Function to navigate to Screen1
   void _goToScreen1() {
