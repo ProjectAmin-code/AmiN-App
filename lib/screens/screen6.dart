@@ -1,23 +1,23 @@
 import 'package:flutter/material.dart';
 import 'screen5.dart'; // Import Screen 5
 
-class Screen4 extends StatelessWidget {
-  final String name; // Variable to hold the name passed from Screen 3
+class Screen6 extends StatelessWidget {
+  final String name; // Variable to hold the name passed from previous screen
 
   // Constructor to accept the name argument
-  Screen4({required this.name});
+  Screen6({required this.name});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFF6E2A0), // Soft yellow background
+      backgroundColor: Color(0xFF81D4FA), // Blue background
       appBar: AppBar(
         backgroundColor: Color(
-          0xFFF6E2A0,
+          0xFF81D4FA,
         ), // Matching AppBar color to background
         elevation: 0, // No shadow for a flat look
         title: Text(
-          "Apa Itu Imbuhan?",
+          "Kenali Imbuhan Awalan meN-",
           style: TextStyle(color: Colors.blue, fontSize: 22),
         ),
         leading: IconButton(
@@ -50,8 +50,12 @@ class Screen4 extends StatelessWidget {
 
             // Description Text
             Text(
-              'Imbuhan ialah morfem terikat yang tidak boleh berdiri sendiri.\n'
-              'Imbuhan perlu ditambah pada kata dasar untuk membentuk kata baharu atau kata terbitan.',
+              'Imbuhan meN- digunakan untuk membentuk kata kerja.',
+              style: TextStyle(fontSize: 18, color: Colors.black),
+              textAlign: TextAlign.center,
+            ),
+            Text(
+              'Ia menunjukkan sesuatu perbuatan atau tindakan.',
               style: TextStyle(fontSize: 18, color: Colors.black),
               textAlign: TextAlign.center,
             ),
@@ -59,7 +63,7 @@ class Screen4 extends StatelessWidget {
 
             // Subtitle and Example Words
             Text(
-              'Kata berimbuhan ialah kata yang mempunyai imbuhan seperti:',
+              'Contoh imbuhan awalan meN-:',
               style: TextStyle(fontSize: 18, color: Colors.black),
               textAlign: TextAlign.center,
             ),
@@ -69,18 +73,13 @@ class Screen4 extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                ExampleWord(text: 'berlari'),
-                ExampleWord(text: 'tertawa'),
-                ExampleWord(text: 'membaca'),
+                ExampleWord(text: 'menari'),
+                ExampleWord(text: 'memasak'),
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                ExampleWord(text: 'menjadikan'),
-                ExampleWord(text: 'dibelikan'),
-                ExampleWord(text: 'masakan'),
-              ],
+              children: [ExampleWord(text: 'mengecat')],
             ),
 
             // Continue Button
