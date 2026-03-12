@@ -7,7 +7,7 @@ class Screen0 extends StatefulWidget {
   const Screen0({super.key});
 
   @override
-  _Screen0State createState() => _Screen0State();
+  State<Screen0> createState() => _Screen0State();
 }
 
 class _Screen0State extends State<Screen0> {
@@ -78,8 +78,7 @@ class _Screen0State extends State<Screen0> {
                           ),
                           boxShadow: [
                             BoxShadow(
-                              // ignore: deprecated_member_use
-                              color: Colors.black.withOpacity(0.1),
+                              color: Colors.black.withValues(alpha: 0.1),
                               spreadRadius: 3,
                               blurRadius: 7,
                             ),
@@ -108,13 +107,13 @@ class _Screen0State extends State<Screen0> {
                     filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
                     child: Container(
                       decoration: BoxDecoration(
-                        // ignore: deprecated_member_use
-                        color: Colors.white.withOpacity(0.6), // Glass effect
+                        color: Colors.white.withValues(
+                          alpha: 0.6,
+                        ), // Glass effect
                         borderRadius: BorderRadius.circular(30),
                         boxShadow: [
                           BoxShadow(
-                            // ignore: deprecated_member_use
-                            color: Colors.black.withOpacity(0.1),
+                            color: Colors.black.withValues(alpha: 0.1),
                             spreadRadius: 3,
                             blurRadius: 7,
                           ),

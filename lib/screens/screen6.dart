@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'screen5.dart'; // Import Screen 5
+import '../learning/screens/learning_flow_screen.dart';
 
 class Screen6 extends StatelessWidget {
   final String name; // Variable to hold the name passed from previous screen
 
   // Constructor to accept the name argument
-  Screen6({required this.name});
+  const Screen6({super.key, required this.name});
 
   @override
   Widget build(BuildContext context) {
@@ -89,17 +89,16 @@ class Screen6 extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) =>
-                        Screen5(name: name), // Passing 'name' to Screen 5
+                    builder: (context) => LearningFlowScreen(name: name),
                   ),
                 );
               },
-              child: Text('Teruskan'),
               style: ElevatedButton.styleFrom(
                 backgroundColor: Color(0xFF0288D1), // Blue button
                 padding: EdgeInsets.symmetric(horizontal: 50, vertical: 15),
                 textStyle: TextStyle(fontSize: 18),
               ),
+              child: Text('Teruskan'),
             ),
           ],
         ),
@@ -111,7 +110,7 @@ class Screen6 extends StatelessWidget {
 // Example Word Widget
 class ExampleWord extends StatelessWidget {
   final String text;
-  const ExampleWord({required this.text});
+  const ExampleWord({super.key, required this.text});
 
   @override
   Widget build(BuildContext context) {

@@ -5,7 +5,7 @@ class Screen4 extends StatelessWidget {
   final String name; // Variable to hold the name passed from Screen 3
 
   // Constructor to accept the name argument
-  Screen4({required this.name});
+  const Screen4({super.key, required this.name});
 
   @override
   Widget build(BuildContext context) {
@@ -95,12 +95,12 @@ class Screen4 extends StatelessWidget {
                   ),
                 );
               },
-              child: Text('Teruskan'),
               style: ElevatedButton.styleFrom(
                 backgroundColor: Color(0xFF0288D1), // Blue button
                 padding: EdgeInsets.symmetric(horizontal: 50, vertical: 15),
                 textStyle: TextStyle(fontSize: 18),
               ),
+              child: Text('Teruskan'),
             ),
           ],
         ),
@@ -112,7 +112,7 @@ class Screen4 extends StatelessWidget {
 // Example Word Widget
 class ExampleWord extends StatelessWidget {
   final String text;
-  const ExampleWord({required this.text});
+  const ExampleWord({super.key, required this.text});
 
   @override
   Widget build(BuildContext context) {

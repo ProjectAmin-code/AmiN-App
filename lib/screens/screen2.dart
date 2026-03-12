@@ -23,7 +23,7 @@ class Screen2 extends StatelessWidget {
                 borderRadius: BorderRadius.circular(30),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.black.withOpacity(0.1),
+                    color: Colors.black.withValues(alpha: 0.1),
                     spreadRadius: 3,
                     blurRadius: 7,
                   ),
@@ -34,7 +34,6 @@ class Screen2 extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 24, // Font size for readability
                   fontWeight: FontWeight.bold,
-                  fontFamily: 'Roboto', // Modern font family
                 ),
               ),
             ),

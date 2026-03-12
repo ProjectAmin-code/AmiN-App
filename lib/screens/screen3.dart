@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'screen4.dart'; // Import Screen4
+import '../games/screens/game_menu_screen.dart';
+import '../learning/screens/belajar_flow_screen.dart';
+import '../quiz/screens/quiz_level_gateway_screen.dart';
+import 'progress_screen.dart';
 
 class Screen3 extends StatelessWidget {
   final String name;
@@ -29,7 +32,7 @@ class Screen3 extends StatelessWidget {
                 borderRadius: BorderRadius.circular(30),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.black.withOpacity(0.1),
+                    color: Colors.black.withValues(alpha: 0.1),
                     spreadRadius: 3,
                     blurRadius: 7,
                   ),
@@ -40,7 +43,6 @@ class Screen3 extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 22, // Slightly smaller font size
                   fontWeight: FontWeight.bold,
-                  fontFamily: 'Roboto', // Modern font family
                 ),
               ),
             ),
@@ -55,61 +57,79 @@ class Screen3 extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       // Belajar Button
-                      ElevatedButton(
-                        onPressed: () {
-                          // Navigate to Screen 4 when "Belajar" is tapped
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => Screen4(name: name),
-                            ),
-                          );
-                        },
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.blue, // Blue button color
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(15),
-                          ),
-                          padding: EdgeInsets.symmetric(vertical: 20),
-                          minimumSize: Size(150, 150), // Fixed button size
-                        ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Icon(Icons.book, color: Colors.white, size: 40),
-                            Text(
-                              "Belajar",
-                              style: TextStyle(
-                                fontSize: 18,
-                                color: Colors.white,
+                      Expanded(
+                        child: SizedBox(
+                          height: 140,
+                          child: ElevatedButton(
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) =>
+                                      BelajarFlowScreen(name: name),
+                                ),
+                              );
+                            },
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.blue, // Blue button color
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(15),
                               ),
+                              padding: EdgeInsets.symmetric(vertical: 20),
                             ),
-                          ],
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Icon(Icons.book, color: Colors.white, size: 40),
+                                Text(
+                                  "Belajar",
+                                  style: TextStyle(
+                                    fontSize: 18,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
                         ),
                       ),
+                      SizedBox(width: 14),
                       // Kuiz Button (disabled for now)
-                      ElevatedButton(
-                        onPressed: () {}, // No action
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.yellow, // Yellow button color
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(15),
-                          ),
-                          padding: EdgeInsets.symmetric(vertical: 20),
-                          minimumSize: Size(150, 150), // Fixed button size
-                        ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Icon(Icons.note, color: Colors.white, size: 40),
-                            Text(
-                              "Kuiz",
-                              style: TextStyle(
-                                fontSize: 18,
-                                color: Colors.white,
+                      Expanded(
+                        child: SizedBox(
+                          height: 140,
+                          child: ElevatedButton(
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) =>
+                                      QuizLevelGatewayScreen(name: name),
+                                ),
+                              );
+                            },
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor:
+                                  Colors.yellow, // Yellow button color
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(15),
                               ),
+                              padding: EdgeInsets.symmetric(vertical: 20),
                             ),
-                          ],
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Icon(Icons.note, color: Colors.white, size: 40),
+                                Text(
+                                  "Kuiz",
+                                  style: TextStyle(
+                                    fontSize: 18,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
                         ),
                       ),
                     ],
@@ -120,53 +140,83 @@ class Screen3 extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       // Main Button (disabled for now)
-                      ElevatedButton(
-                        onPressed: () {}, // No action
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.orange, // Orange button color
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(15),
-                          ),
-                          padding: EdgeInsets.symmetric(vertical: 20),
-                          minimumSize: Size(150, 150), // Fixed button size
-                        ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Icon(Icons.gamepad, color: Colors.white, size: 40),
-                            Text(
-                              "Main",
-                              style: TextStyle(
-                                fontSize: 18,
-                                color: Colors.white,
+                      Expanded(
+                        child: SizedBox(
+                          height: 140,
+                          child: ElevatedButton(
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const GameMenuScreen(),
+                                ),
+                              );
+                            },
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor:
+                                  Colors.orange, // Orange button color
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(15),
                               ),
+                              padding: EdgeInsets.symmetric(vertical: 20),
                             ),
-                          ],
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Icon(
+                                  Icons.gamepad,
+                                  color: Colors.white,
+                                  size: 40,
+                                ),
+                                Text(
+                                  "Main",
+                                  style: TextStyle(
+                                    fontSize: 18,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
                         ),
                       ),
+                      SizedBox(width: 14),
                       // Kemajuan Button (disabled for now)
-                      ElevatedButton(
-                        onPressed: () {}, // No action
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.green, // Green button color
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(15),
-                          ),
-                          padding: EdgeInsets.symmetric(vertical: 20),
-                          minimumSize: Size(150, 150), // Fixed button size
-                        ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Icon(Icons.star, color: Colors.white, size: 40),
-                            Text(
-                              "Kemajuan",
-                              style: TextStyle(
-                                fontSize: 18,
-                                color: Colors.white,
+                      Expanded(
+                        child: SizedBox(
+                          height: 140,
+                          child: ElevatedButton(
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) =>
+                                      ProgressScreen(name: name),
+                                ),
+                              );
+                            },
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor:
+                                  Colors.green, // Green button color
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(15),
                               ),
+                              padding: EdgeInsets.symmetric(vertical: 20),
                             ),
-                          ],
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Icon(Icons.star, color: Colors.white, size: 40),
+                                Text(
+                                  "Kemajuan",
+                                  style: TextStyle(
+                                    fontSize: 18,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
                         ),
                       ),
                     ],
